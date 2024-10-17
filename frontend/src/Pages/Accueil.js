@@ -1,7 +1,7 @@
 export default function Accueil() {
     return(
         <div>
-        <p>Start of project</p>
+        <p>Start of projectt</p>
         </div>
     )
 }
