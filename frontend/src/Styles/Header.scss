@@ -22,6 +22,10 @@ li a {
     text-decoration: none; 
 }
 
+li a:hover {
+    color: inherit;
+}
+
 .logo {
     width: 81px;
 }
