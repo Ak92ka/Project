@@ -1,7 +1,11 @@
+import Header from "../Components/Header"
+import Banner from "../Components/Banner"
+
 export default function Accueil() {
-    return(
+    return (
         <div>
-        <p>Start of project</p>
+            <Header/>
+            <Banner/>
         </div>
     )
 }
