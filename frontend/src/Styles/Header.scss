@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: space-between; 
     padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(249, 249, 249, 1);
 }
 
 .header-ul {

@@ -1,0 +1,40 @@
+.progress-bar {
+    //width: 100%;
+    width: 50%;
+    height: 35px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #cac3c3;
+}
+
+
+
+.progress-bar__fill {
+    height: 100%;
+    background-color: #FF6B35;
+    line-height: 35px;
+    display: flex; 
+    align-items: center; 
+    padding-left: 10px; 
+}
+
+.bar-yellow .progress-bar__fill {
+    background-color: #d3ff35;
+}
+
+.skill {
+    color: #FFF5F0;
+    margin: 10px;
+    white-space: nowrap;
+}
+
+.skill-image {
+    height: 20px;
+}
+
+.val {
+    color: #FFF5F0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 20px; 
+}
