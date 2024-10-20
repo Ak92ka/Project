@@ -1,16 +1,23 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const ProgressBar = ({ percentage, className, src, skill, val, alt }) => {
+
+const ProgressBar = ({ percentage, className, icon, skill, val }) => {
     return (
-        <div className={`progress-bar ${className}`}>            <div
-            className="progress-bar__fill"
-            style={{ width: `${percentage}%` }}
-            
-        >
-            <img src={src} alt={alt} className='skill-image'></img>
-            <span className="skill">{skill}</span>
-            <span className="val">{val}</span>
-        </div>
+        <div className={`progress-bar ${className}`}>
+            <div
+                className="progress-bar__fill"
+                style={{ width: `${percentage}%` }}
+
+            >
+                {typeof icon === "string" ? (
+                    <img src={icon} alt={skill} className="skill-icon" />
+                    )    : (
+                <FontAwesomeIcon icon={icon} className="skill-icon" />
+                )}
+                <span className="skill">{skill}</span>
+                <span className="val">{val}</span>
+            </div>
         </div>
     );
 };

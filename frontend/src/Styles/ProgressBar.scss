@@ -18,8 +18,24 @@
     padding-left: 10px; 
 }
 
+.bar-blue .progress-bar__fill {
+    background-color: #3564ff;
+}
+
 .bar-yellow .progress-bar__fill {
-    background-color: #d3ff35;
+    background-color: #a1c326;
+}
+
+.bar-dark-blue .progress-bar__fill {
+    background-color: #301868;
+}
+
+.bar-dark-green .progress-bar__fill {
+    background-color: #0e381c;
+}
+
+.bar-green .progress-bar__fill {
+    background-color: #1f7b3e;
 }
 
 .skill {
@@ -28,8 +44,9 @@
     white-space: nowrap;
 }
 
-.skill-image {
-    height: 20px;
+.skill-icon {
+    color: white;
+    height: 27px;
 }
 
 .val {
