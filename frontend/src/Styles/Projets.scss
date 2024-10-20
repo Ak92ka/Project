@@ -1,0 +1,37 @@
+.projets-h1 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.projets-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.projets-buttons button {
+    margin-right: 23px;
+    padding: 8px 20px;
+    background-color: #FF6B35;
+    color: #F9F9F9;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 25px;
+}
+
+.projet-image {
+    height: 339px;
+}
+
+.projets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.projet-item {
+    margin: 5px;
+    padding: 5px;
+    cursor: pointer;
+}

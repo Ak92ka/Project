@@ -1,6 +1,5 @@
 import ProgressBar from "./ProgressBar";
 import { faHtml5, faCss3Alt, faJsSquare, faReact, faNode } from "@fortawesome/free-brands-svg-icons";
-import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import mongodb from "../Assets/mongodb.svg"
 
 export default function Competences() {
