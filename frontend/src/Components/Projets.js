@@ -21,6 +21,17 @@ export default function Projets() {
 
         fetchProjets();
     }, []);
+    const fetchProjets = async () => {
+        try {
+            const data = await client.fetch('*[_type == "projets"]');
+            setProjets(data);
+        } catch (error) {
+            console.error('Error fetching projects:', error);
+        }
+    };
+
+    fetchProjets();
+
     return (
         <section className="section2" id="projets">
             <h1 className="projets-h1">Projets</h1>
