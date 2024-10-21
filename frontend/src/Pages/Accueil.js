@@ -3,6 +3,7 @@ import Banner from "../Components/Banner"
 import Apropos from "../Components/Apropos"
 import Competences from "../Components/Competences"
 import Projets from "../Components/Projets"
+import Footer from "../Components/Footer"
 
 export default function Accueil() {
     return (
@@ -12,6 +13,7 @@ export default function Accueil() {
             <Apropos/>
             <Competences/>
             <Projets/>
+            <Footer/>
         </div>
     )
 }

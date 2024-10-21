@@ -1,6 +1,7 @@
 .projets-h1 {
     text-align: center;
     padding-top: 40px;
+    font-size: 32px;
 }
 
 .projets-buttons {
@@ -23,15 +24,40 @@
     height: 339px;
 }
 
+.projet-item:hover .projet-image {
+    filter: brightness(0.3);
+    transition: filter 0.3s ease;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 .projets {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding-bottom: 35px;
 }
 
 .projet-item {
     margin: 5px;
     padding: 5px;
+    position: relative;
+}
+
+.projet-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F9F9F9;
+    text-align: center;
+    display: none;
     cursor: pointer;
 }
+
+.projet-item:hover .projet-caption {
+    display: block;
+}
+
+
