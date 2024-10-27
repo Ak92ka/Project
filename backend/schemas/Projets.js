@@ -15,6 +15,15 @@ export default {
             options: {
               hotspot: true // Optional: This allows for image cropping
             }  
+        },
+        {
+            name: 'categories',
+            type: 'array',
+            title: 'Categories of Project',
+            of: [{ type: 'string' }],
+            options: {
+                layout: 'tags' 
+            }
         }
     ]
 };

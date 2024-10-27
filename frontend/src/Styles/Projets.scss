@@ -18,10 +18,12 @@
     cursor: pointer;
     border: none;
     margin-bottom: 25px;
+    border-radius: 20px;
 }
 
 .projet-image {
     height: 339px;
+    width: 286px;
 }
 
 .projet-item:hover .projet-image {
@@ -32,11 +34,13 @@
 }
 
 .projets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); // mobile
+    /* grid-column-gap: 54px; */
+    grid-row-gap: 30px;
     padding-bottom: 35px;
+    margin: 0px 46px;
 }
 
 .projet-item {
