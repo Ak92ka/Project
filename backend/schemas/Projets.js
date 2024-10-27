@@ -24,6 +24,17 @@ export default {
             options: {
                 layout: 'tags' 
             }
+        },
+        {
+            name: 'description', 
+            type: 'text', 
+            title: 'Description of Project', 
+        },
+        {
+            name: 'lien', 
+            type: 'string', 
+            title: 'Website of Project', 
         }
+
     ]
 };

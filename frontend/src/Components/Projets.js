@@ -1,59 +1,91 @@
-import client from '../sanityClient';
-import React, { useEffect, useState } from 'react';
-import imageUrlBuilder from '@sanity/image-url';
-import Filter from './Filter';
-import { debounce } from 'lodash';
-
+import client from "../sanityClient";
+import React, { useEffect, useState } from "react";
+import imageUrlBuilder from "@sanity/image-url";
+import Filter from "./Filter";
+import { debounce } from "lodash";
+import Modal from "./Modal";
 
 export default function Projets() {
-    const builder = imageUrlBuilder(client);
-    const urlFor = (source) => {
-        return builder.image(source);
-      };
-    const [projets, setProjets] = useState([]);
-    const [selectedFilter, setSelectedFilter] = useState('Tous');
+  const builder = imageUrlBuilder(client);
+  const urlFor = (source) => {
+    return builder.image(source);
+  };
 
-    useEffect(() => {
-        const fetchProjets = debounce(async () => {
-            try {
-                const data = await client.fetch('*[_type == "projets"]');
-                setProjets(data);
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-            }
-        }, 300);
+  const [projets, setProjets] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState("Tous");
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
-        fetchProjets();
-    }, []);
+  useEffect(() => {
+    const fetchProjets = debounce(async () => {
+      try {
+        const data = await client.fetch('*[_type == "projets"]');
+        setProjets(data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      }
+    }, 300);
 
-    const filteredProjets = selectedFilter === 'Tous'
-        ? projets
-        : projets.filter(projet => projet.categories && projet.categories.includes(selectedFilter));
+    fetchProjets();
+  }, []);
 
-    return (
-        <section className="section2" id="projets">
-            <h1 className="projets-h1">Projets</h1>
-            <div className="projets-buttons">
-                <Filter selectedFilter={selectedFilter} onFilterChange={setSelectedFilter} />
-                {/* <button>Tous</button>
-                <button>HTML</button>
-                <button>CSS</button>
-                <button>Javascript</button>
-                <button>React</button>
-                <button>Backend</button> */}
-            </div>
-            <div className="projets">
-         {filteredProjets.map(projet => (
-            <div key={projet._id} className="projet-item">
-            {projet.img && 
+  const filteredProjets =
+    selectedFilter === "Tous"
+      ? projets
+      : projets.filter(
+          (projet) =>
+            projet.categories && projet.categories.includes(selectedFilter)
+        );
+
+  const openModal = (projet) => {
+    setSelectedProject(projet);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => setModalIsOpen(false);
+
+  return (
+    <section className="section2" id="projets">
+      <h1 className="projets-h1">Projets</h1>
+      <div className="projets-buttons">
+        <Filter
+          selectedFilter={selectedFilter}
+          onFilterChange={setSelectedFilter}
+        />
+      </div>
+      <div className="projets">
+        {filteredProjets.map((projet) => (
+          <div key={projet._id} className="projet-item">
+            {projet.img && (
+              <img
+                src={urlFor(projet.img).url()}
+                alt={projet.name}
+                className="projet-image"
+                onClick={() => openModal(projet)}
+              />
+            )}
+            <figcaption onClick={() => openModal(projet)} className="projet-caption" key={projet._id}>
+              {projet.name}
+            </figcaption>
+          </div>
+        ))}
+        <Modal isOpen={modalIsOpen} onClose={closeModal}>
+          <div className="projet-modal-content">
+          {selectedProject && <h2 className="modal-projet-title">{selectedProject.name}</h2>}
+          {selectedProject?.img && (
             <img
-             src={urlFor(projet.img).url()} 
-             alt={projet.name} 
-             className="projet-image" />},
-            <figcaption className="projet-caption" key={projet._id}>{projet.name}</figcaption>
-            </div>
-         ))}
-            </div>
-        </section>
-    );
+              src={urlFor(selectedProject.img).url()}
+              alt={selectedProject.name}
+              className="modal-image"
+            />
+          )}
+          {/* <p>{selectedProject.description}</p> */}
+          <div className="button-container">
+          {/* <button onClick={selectedProject.lien}>Lien vers le site</button> */}
+          </div>
+          </div>
+        </Modal>
+      </div>
+    </section>
+  );
 }
