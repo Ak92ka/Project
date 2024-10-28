@@ -64,25 +64,40 @@ export default function Projets() {
                 onClick={() => openModal(projet)}
               />
             )}
-            <figcaption onClick={() => openModal(projet)} className="projet-caption" key={projet._id}>
+            <figcaption
+              onClick={() => openModal(projet)}
+              className="projet-caption"
+              key={projet._id}
+            >
               {projet.name}
             </figcaption>
           </div>
         ))}
         <Modal isOpen={modalIsOpen} onClose={closeModal}>
           <div className="projet-modal-content">
-          {selectedProject && <h2 className="modal-projet-title">{selectedProject.name}</h2>}
-          {selectedProject?.img && (
-            <img
-              src={urlFor(selectedProject.img).url()}
-              alt={selectedProject.name}
-              className="modal-image"
-            />
-          )}
-          {/* <p>{selectedProject.description}</p> */}
-          <div className="button-container">
-          {/* <button onClick={selectedProject.lien}>Lien vers le site</button> */}
-          </div>
+            {selectedProject && (
+              <h2 className="modal-projet-title">{selectedProject.name}</h2>
+            )}
+            {selectedProject?.img && (
+              <img
+                src={urlFor(selectedProject.img).url()}
+                alt={selectedProject.name}
+                className="modal-image"
+              />
+            )}
+            {selectedProject?.description && (
+              <p>{selectedProject.description}</p>
+            )}
+            <div className="button-container">
+              {selectedProject?.lien && (
+                <button
+                  onClick={() => window.open(selectedProject.lien, "_blank")}
+                  className="modal-button"
+                >
+                  Lien vers le site
+                </button>
+              )}
+            </div>
           </div>
         </Modal>
       </div>
