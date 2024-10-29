@@ -12,7 +12,9 @@ const router = createBrowserRouter([
     path: "/",
     element: <Accueil />,
   },
-]);
+], {
+  basename: "/Project",  // Add this basename property
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

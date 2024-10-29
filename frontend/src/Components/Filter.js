@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Filter({ selectedFilter, onFilterChange }) {
-    const filters = ['Tous', 'HTML', 'CSS', 'Javascript', 'React', 'Backend'];
+    const filters = ['Tous', 'HTML', 'Javascript', 'CSS', 'React', 'Backend'];
 
     return (
         <div className="projets-buttons">
