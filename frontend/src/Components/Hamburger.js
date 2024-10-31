@@ -10,6 +10,8 @@ export default function HamburgerMenu() {
     setIsOpen(!isOpen);
   };
 
+  const error = console.error; console.error = (...args: any) => { if (/defaultProps/.test(args[0])) return; error(...args); };
+
   return (
     <div>
       <FontAwesomeIcon icon={faBars} className="hamburger-icon" onClick={handleMenuToggle} style={{ cursor: 'pointer', fontSize: '24px' }} />
