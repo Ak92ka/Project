@@ -86,7 +86,7 @@ export default function Projets() {
               />
             )}
             {selectedProject?.description && (
-              <p>{selectedProject.description}</p>
+              <p className="modal-p">{selectedProject.description}</p>
             )}
             <div className="button-container">
               {selectedProject?.lien && (

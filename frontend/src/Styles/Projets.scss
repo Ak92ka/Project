@@ -52,7 +52,7 @@
 .projet-caption {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 38%;
     transform: translate(-50%, -50%);
     color: #F9F9F9;
     text-align: center;
@@ -80,3 +80,8 @@
     text-align: center;
 }
 
+.modal-p {
+    background-color: #1A3E7A;
+    color: white;
+    padding: 10px;
+}

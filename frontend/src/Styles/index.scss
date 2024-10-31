@@ -31,3 +31,84 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Medium devices (tablets, less/equal than 1030px) */
+@media (max-width: 1030px) {
+  .projet-caption {
+    left: 41%;
+}
+  .competence-h2 {
+  width: 17%;
+}
+  .progress-bar {
+  width: 55%;
+}
+.projets {
+  grid-template-columns: repeat(2, 365px);
+  justify-content: center;
+  margin: 0px 67px;
+}
+}
+
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .banner {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.banner-gif {
+  padding-bottom: 30px;
+}
+.banner-text h1 {
+  font-size: 40px;
+}
+.banner-text h2 {
+  font-size: 22px;
+}
+.banner-text p {
+  font-size: 14px;
+}
+.banner-text {
+text-align: center;
+}
+.banner-gif {
+  width: 100%;
+}
+.competence-h2 {
+  width: 33%;
+}
+.progress-bar {
+  width: 90%;
+}
+.projets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.modal-content {
+  width: 84%;
+}
+.header-ul {
+  display: none;
+}
+.bm-menu {
+  display: block;
+}
+.bm-menu-wrap {
+  display: block;
+}
+.bm-overlay {
+  display: block;
+}
+.bm-burger-button {
+  display: block;
+}
+.hamburger-icon {
+  display: block;
+}
+.hamburger-container {
+  display: block;
+}
+}

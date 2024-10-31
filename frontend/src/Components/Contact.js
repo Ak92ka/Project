@@ -2,25 +2,25 @@ import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-  const form = useRef(); // Create a reference for the form
-  const [submitted, setSubmitted] = useState(false); // State to track submission status
-  const [error, setError] = useState(''); // State for error handling
+  const form = useRef();
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(''); 
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_rpdgvlv', 'template_bsk2k8k', form.current, 'DWEyILDMuBUmpx6ia') // Use your actual service ID and template ID
+      .sendForm('service_rpdgvlv', 'template_bsk2k8k', form.current, 'DWEyILDMuBUmpx6ia')
       .then(
         () => {
           console.log('SUCCESS!');
-          setSubmitted(true); // Mark the form as submitted
-          setError(''); // Clear any previous errors
-          form.current.reset(); // Reset the form fields
+          setSubmitted(true); 
+          setError(''); 
+          form.current.reset(); 
         },
         (error) => {
           console.log('FAILED...', error.text);
-          setError('Failed to send message. Please try again later.'); // Set error message
+          setError('Failed to send message. Please try again later.');
         },
       );
   };
