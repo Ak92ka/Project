@@ -11,7 +11,7 @@ const ProgressBar = ({ percentage, className, icon, skill, val }) => {
 
             >
                 {typeof icon === "string" ? (
-                    <img src={icon} alt={skill} className="skill-icon" />
+                    <img src={icon} alt={skill} className="skill-icon" height="400" width="" />
                     )    : (
                 <FontAwesomeIcon icon={icon} className="skill-icon" />
                 )}

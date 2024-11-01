@@ -61,6 +61,7 @@ export default function Projets() {
                 src={urlFor(projet.img).url()}
                 alt={projet.name}
                 className="projet-image"
+                width="286"
                 onClick={() => openModal(projet)}
               />
             )}
@@ -83,6 +84,7 @@ export default function Projets() {
                 src={urlFor(selectedProject.img).url()}
                 alt={selectedProject.name}
                 className="modal-image"
+                height="419"
               />
             )}
             {selectedProject?.description && (
