@@ -46,7 +46,7 @@ export default function Projets() {
 
   return (
     <section className="section2" id="projets">
-      <h1 className="projets-h1">Projets</h1>
+      <h2 className="projets-h2">Projets</h2>
       <div className="projets-buttons">
         <Filter
           selectedFilter={selectedFilter}
