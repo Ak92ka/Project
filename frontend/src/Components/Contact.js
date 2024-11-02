@@ -29,7 +29,7 @@ export default function Contact() {
     <div id="contact" className="contact-container">
       <h2 className='contact-h2'>Contact</h2>
       <form ref={form} onSubmit={sendEmail} className="contact-form">
-        <label htmlFor="user_name">Npm</label>
+        <label htmlFor="user_name">Nom</label>
         <input type="text" id="user_name" name="user_name" required placeholder="Votre Nom" />
 
         <label htmlFor="user_email">Email</label>
